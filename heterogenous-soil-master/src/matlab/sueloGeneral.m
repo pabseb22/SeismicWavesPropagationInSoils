@@ -32,7 +32,7 @@ classdef sueloGeneral
             % define a un suelo heterogeneo creado aleatoriamente
             %% Syntax:
             %    nombre_suelo = sueloGeneral(x_tamano, dx, y_tamano, dy, ...
-                                     ll_medio, cov, l_ac, vLL)
+            %                         ll_medio, cov, l_ac, vLL)
             %% Input
             % Valores de entrada requeridos:
             %   nombre_suelo        - objeto que contiene la informacion requerida 

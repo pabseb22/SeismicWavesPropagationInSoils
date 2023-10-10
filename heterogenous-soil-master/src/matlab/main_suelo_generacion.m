@@ -32,8 +32,7 @@ clear ans suelo_0
 
 vLL = [];
 
-suelo_0 = sueloGeneral(x_tamano, dx, y_tamano, dy, ...
-                       ll_medio, cov, l_ac, vLL);
+suelo_0 = sueloGeneral(x_tamano, dx, y_tamano, dy, ll_medio, cov, l_ac, vLL);
 
 tamano_suelo_folder = "x_" + string(x_tamano)+ "--" + "y_" + string(y_tamano) + "--" + "dx_" + string(dx) + "--" + "dy_" + string(dy);
 sub_folder = "cov_" + string(cov)+ "--" + "lac_" + string(l_ac);
@@ -88,10 +87,11 @@ i = 0;
 file_exist = 1;
 while file_exist ~= 0
     folder_name = "suelo_" + string(i);
-    tmp_folder = join([current_path, '\..\..\resultados\', tamano_suelo_folder + "\", sub_folder + "\",folder_name]);
+    tmp_folder = join([current_path, '\..\..\resultados\', strtrim(tamano_suelo_folder) + "\", strtrim(sub_folder) + "\",strtrim(folder_name)]);
     file_exist = exist( tmp_folder, "dir");
     i = i + 1;
 end
+tmp_folder = strrep(tmp_folder,' ','')
 mkdir(tmp_folder);
 tmp_file = join([tmp_folder , "\suelo_espacio.mat"]);
 copyfile("suelo_espacio.mat", tmp_file);
